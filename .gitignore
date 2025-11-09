@@ -14,11 +14,13 @@
 [Ss]cripts
 pyvenv.cfg
 .venv
+.env
 pip-selfcheck.json
 
 ### VisualStudioCode ###
 __pycache__/
 *.pyc
+*.py[cod]
 
 ### VisualStudioCode ###
 .vscode/*

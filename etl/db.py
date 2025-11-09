@@ -1,12 +1,39 @@
+import os
+from pathlib import Path
+from dotenv import load_dotenv
 import mysql.connector as mysql
 
+
+# Configuración de variables de entorno desde .env en la raíz del proyecto
+ROOT = Path(__file__).resolve().parents[1]
+load_dotenv(ROOT / ".env")
+
+# Función para obtener variables de entorno requeridas
+def _required(name: str) -> str:
+    val = os.getenv(name)
+    if not val:
+        raise RuntimeError(f"Falta una variable de entorno obligatoria: {name}")
+    return val
+
+
+# Conexión a la base de datos MySQL usando variables de entorno
 def get_connection():
-    return mysql.connect(
-        host="localhost", #Host de la BD
-        user="root", #Usuario
-        password="lead@1234", #Contraseña
-        database="dwh_inventario", #Base de datos destino
-    )
+    host = _required("DB_HOST")
+    user = _required("DB_USER")
+    database = _required("DB_NAME")
+    password = _required("DB_PASSWORD")
+
+    # Paramentros de conexión 
+    kwargs = dict(
+        host=host,
+        user=user,
+        password=password,
+        database=database,
+    )    
+
+    return mysql.connect(**kwargs)
+
+
 
 def bulk_upsert_inventario(df):
     #Inserta registros en la tabla inventario_consolidado con UPSERT

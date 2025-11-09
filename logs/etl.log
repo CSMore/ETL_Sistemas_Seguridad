@@ -295,3 +295,80 @@ mysql.connector.errors.DataError: 1406 (22001): Data too long for column 'nombre
 2025-11-07 18:46:33,875 - INFO - Cargados/actualizados: 4312 registros
 2025-11-07 18:46:33,875 - INFO - [CARGA] ok
 2025-11-07 18:46:33,875 - INFO - === FIN PIPELINE ETL (OK) ===
+2025-11-09 14:00:55,891 - INFO - === INICIO PIPELINE ETL ===
+2025-11-09 14:00:55,892 - INFO - [EXTRACCION_LOCAL] inicio
+2025-11-09 14:00:57,632 - INFO - Leído data/raw/Inventario POS 1.xlsx como archivo Excel
+2025-11-09 14:00:57,898 - INFO - Leído data/raw/Inventario POS 2.xlsx como archivo Excel
+2025-11-09 14:00:57,966 - INFO - Leído data/raw/Inventario_3.csv con codificación: latin1
+2025-11-09 14:00:57,972 - INFO - Columnas detectadas: ['Bodega', 'Column2', 'Codigo producto', 'Nombre', 'STOCK', 'Column6', 'Precio', 'Column8', 'Column9', 'Column10', 'Column11', 'Column12', 'Column13', 'Column14', 'Column15', 'Column16', 'Column17', 'Column18', 'Column19', 'Column20', 'Column21', 'Column22', 'Column23', 'Column24', 'Column25', 'Column26', 'Column27', 'Column28', 'Column29', 'Column30', 'Column31', 'Column32', 'Fuente_Archivo', 'Descripción del producto', 'Stock', 'Categoria', 'Imagen', 'Codigo_Producto_SKU', 'Descripcion_Producto', 'Imagen(url del servidor)']
+2025-11-09 14:00:57,974 - INFO - [EXTRACCION_LOCAL] ok
+2025-11-09 14:00:57,975 - INFO - [TRANSFORMACION] inicio
+2025-11-09 14:00:57,977 - INFO - Columnas normalizadas: [('bodega', 'Bodega'), ('column2', 'Column2'), ('codigoproducto', 'Codigo producto'), ('nombre', 'Nombre'), ('stock', 'STOCK'), ('column6', 'Column6'), ('precio', 'Precio'), ('column8', 'Column8'), ('column9', 'Column9'), ('column10', 'Column10'), ('column11', 'Column11'), ('column12', 'Column12'), ('column13', 'Column13'), ('column14', 'Column14'), ('column15', 'Column15'), ('column16', 'Column16'), ('column17', 'Column17'), ('column18', 'Column18'), ('column19', 'Column19'), ('column20', 'Column20'), ('column21', 'Column21'), ('column22', 'Column22'), ('column23', 'Column23'), ('column24', 'Column24'), ('column25', 'Column25'), ('column26', 'Column26'), ('column27', 'Column27'), ('column28', 'Column28'), ('column29', 'Column29'), ('column30', 'Column30'), ('column31', 'Column31'), ('column32', 'Column32'), ('fuentearchivo', 'Fuente_Archivo'), ('descripciondelproducto', 'Descripción del producto'), ('stock', 'Stock'), ('categoria', 'Categoria'), ('imagen', 'Imagen'), ('codigoproductosku', 'Codigo_Producto_SKU'), ('descripcionproducto', 'Descripcion_Producto'), ('imagenurldelservidor', 'Imagen(url del servidor)')]
+2025-11-09 14:00:58,143 - INFO - Transformación final: 4312 filas
+2025-11-09 14:00:58,143 - INFO - [TRANSFORMACION] ok
+2025-11-09 14:00:58,143 - INFO - [CARGA] inicio
+2025-11-09 14:00:58,557 - INFO - Cargados/actualizados: 4312 registros
+2025-11-09 14:00:58,558 - INFO - [CARGA] ok
+2025-11-09 14:00:58,558 - INFO - === FIN PIPELINE ETL (OK) ===
+2025-11-09 14:10:45,821 - INFO - === INICIO PIPELINE ETL ===
+2025-11-09 14:10:45,821 - INFO - [EXTRACCION_LOCAL] inicio
+2025-11-09 14:10:47,402 - INFO - Leído data/raw/Inventario POS 1.xlsx como archivo Excel
+2025-11-09 14:10:47,653 - INFO - Leído data/raw/Inventario POS 2.xlsx como archivo Excel
+2025-11-09 14:10:47,659 - INFO - Leído data/raw/Inventario_3.csv con codificación: latin1
+2025-11-09 14:10:47,665 - INFO - Columnas detectadas: ['Bodega', 'Column2', 'Codigo producto', 'Nombre', 'STOCK', 'Column6', 'Precio', 'Column8', 'Column9', 'Column10', 'Column11', 'Column12', 'Column13', 'Column14', 'Column15', 'Column16', 'Column17', 'Column18', 'Column19', 'Column20', 'Column21', 'Column22', 'Column23', 'Column24', 'Column25', 'Column26', 'Column27', 'Column28', 'Column29', 'Column30', 'Column31', 'Column32', 'Fuente_Archivo', 'Descripción del producto', 'Stock', 'Categoria', 'Imagen', 'Codigo_Producto_SKU', 'Descripcion_Producto', 'Imagen(url del servidor)']
+2025-11-09 14:10:47,667 - INFO - [EXTRACCION_LOCAL] ok
+2025-11-09 14:10:47,667 - INFO - [TRANSFORMACION] inicio
+2025-11-09 14:10:47,667 - INFO - Columnas normalizadas: [('bodega', 'Bodega'), ('column2', 'Column2'), ('codigoproducto', 'Codigo producto'), ('nombre', 'Nombre'), ('stock', 'STOCK'), ('column6', 'Column6'), ('precio', 'Precio'), ('column8', 'Column8'), ('column9', 'Column9'), ('column10', 'Column10'), ('column11', 'Column11'), ('column12', 'Column12'), ('column13', 'Column13'), ('column14', 'Column14'), ('column15', 'Column15'), ('column16', 'Column16'), ('column17', 'Column17'), ('column18', 'Column18'), ('column19', 'Column19'), ('column20', 'Column20'), ('column21', 'Column21'), ('column22', 'Column22'), ('column23', 'Column23'), ('column24', 'Column24'), ('column25', 'Column25'), ('column26', 'Column26'), ('column27', 'Column27'), ('column28', 'Column28'), ('column29', 'Column29'), ('column30', 'Column30'), ('column31', 'Column31'), ('column32', 'Column32'), ('fuentearchivo', 'Fuente_Archivo'), ('descripciondelproducto', 'Descripción del producto'), ('stock', 'Stock'), ('categoria', 'Categoria'), ('imagen', 'Imagen'), ('codigoproductosku', 'Codigo_Producto_SKU'), ('descripcionproducto', 'Descripcion_Producto'), ('imagenurldelservidor', 'Imagen(url del servidor)')]
+2025-11-09 14:10:47,736 - INFO - Transformación final: 4312 filas
+2025-11-09 14:10:47,736 - INFO - [TRANSFORMACION] ok
+2025-11-09 14:10:47,736 - INFO - [CARGA] inicio
+2025-11-09 14:10:47,981 - INFO - Cargados/actualizados: 8624 registros
+2025-11-09 14:10:47,981 - INFO - [CARGA] ok
+2025-11-09 14:10:47,981 - INFO - === FIN PIPELINE ETL (OK) ===
+2025-11-09 15:14:15,329 - INFO - === INICIO PIPELINE ETL ===
+2025-11-09 15:14:15,329 - INFO - [EXTRACCION_LOCAL] inicio
+2025-11-09 15:14:17,348 - INFO - Leído data/raw/Inventario POS 1.xlsx como archivo Excel
+2025-11-09 15:14:17,580 - INFO - Leído data/raw/Inventario POS 2.xlsx como archivo Excel
+2025-11-09 15:14:17,590 - INFO - Leído data/raw/Inventario_3.csv con codificación: latin1
+2025-11-09 15:14:17,598 - INFO - Columnas detectadas: ['Bodega', 'Column2', 'Codigo producto', 'Nombre', 'STOCK', 'Column6', 'Precio', 'Column8', 'Column9', 'Column10', 'Column11', 'Column12', 'Column13', 'Column14', 'Column15', 'Column16', 'Column17', 'Column18', 'Column19', 'Column20', 'Column21', 'Column22', 'Column23', 'Column24', 'Column25', 'Column26', 'Column27', 'Column28', 'Column29', 'Column30', 'Column31', 'Column32', 'Fuente_Archivo', 'Descripción del producto', 'Stock', 'Categoria', 'Imagen', 'Codigo_Producto_SKU', 'Descripcion_Producto', 'Imagen(url del servidor)']
+2025-11-09 15:14:17,601 - INFO - [EXTRACCION_LOCAL] ok
+2025-11-09 15:14:17,602 - INFO - [TRANSFORMACION] inicio
+2025-11-09 15:14:17,602 - INFO - Columnas normalizadas: [('bodega', 'Bodega'), ('column2', 'Column2'), ('codigoproducto', 'Codigo producto'), ('nombre', 'Nombre'), ('stock', 'STOCK'), ('column6', 'Column6'), ('precio', 'Precio'), ('column8', 'Column8'), ('column9', 'Column9'), ('column10', 'Column10'), ('column11', 'Column11'), ('column12', 'Column12'), ('column13', 'Column13'), ('column14', 'Column14'), ('column15', 'Column15'), ('column16', 'Column16'), ('column17', 'Column17'), ('column18', 'Column18'), ('column19', 'Column19'), ('column20', 'Column20'), ('column21', 'Column21'), ('column22', 'Column22'), ('column23', 'Column23'), ('column24', 'Column24'), ('column25', 'Column25'), ('column26', 'Column26'), ('column27', 'Column27'), ('column28', 'Column28'), ('column29', 'Column29'), ('column30', 'Column30'), ('column31', 'Column31'), ('column32', 'Column32'), ('fuentearchivo', 'Fuente_Archivo'), ('descripciondelproducto', 'Descripción del producto'), ('stock', 'Stock'), ('categoria', 'Categoria'), ('imagen', 'Imagen'), ('codigoproductosku', 'Codigo_Producto_SKU'), ('descripcionproducto', 'Descripcion_Producto'), ('imagenurldelservidor', 'Imagen(url del servidor)')]
+2025-11-09 15:14:17,711 - INFO - Transformación final: 4312 filas
+2025-11-09 15:14:17,711 - INFO - [TRANSFORMACION] ok
+2025-11-09 15:14:17,712 - INFO - [CARGA] inicio
+2025-11-09 15:14:17,935 - INFO - Cargados/actualizados: 8624 registros
+2025-11-09 15:14:17,935 - INFO - [CARGA] ok
+2025-11-09 15:14:17,935 - INFO - === FIN PIPELINE ETL (OK) ===
+2025-11-09 15:18:56,940 - INFO - === INICIO PIPELINE ETL ===
+2025-11-09 15:18:56,940 - INFO - === INICIO PIPELINE ETL ===
+2025-11-09 15:18:56,942 - INFO - [EXTRACCION_LOCAL] inicio
+2025-11-09 15:18:56,942 - INFO - [EXTRACCION_LOCAL] inicio
+2025-11-09 15:18:58,641 - INFO - Leído data/raw/Inventario POS 1.xlsx como archivo Excel
+2025-11-09 15:18:58,641 - INFO - Leído data/raw/Inventario POS 1.xlsx como archivo Excel
+2025-11-09 15:18:58,896 - INFO - Leído data/raw/Inventario POS 2.xlsx como archivo Excel
+2025-11-09 15:18:58,896 - INFO - Leído data/raw/Inventario POS 2.xlsx como archivo Excel
+2025-11-09 15:18:58,896 - INFO - Leído data/raw/Inventario_3.csv con codificación: latin1
+2025-11-09 15:18:58,896 - INFO - Leído data/raw/Inventario_3.csv con codificación: latin1
+2025-11-09 15:18:58,909 - INFO - Columnas detectadas: ['Bodega', 'Column2', 'Codigo producto', 'Nombre', 'STOCK', 'Column6', 'Precio', 'Column8', 'Column9', 'Column10', 'Column11', 'Column12', 'Column13', 'Column14', 'Column15', 'Column16', 'Column17', 'Column18', 'Column19', 'Column20', 'Column21', 'Column22', 'Column23', 'Column24', 'Column25', 'Column26', 'Column27', 'Column28', 'Column29', 'Column30', 'Column31', 'Column32', 'Fuente_Archivo', 'Descripción del producto', 'Stock', 'Categoria', 'Imagen', 'Codigo_Producto_SKU', 'Descripcion_Producto', 'Imagen(url del servidor)']
+2025-11-09 15:18:58,909 - INFO - Columnas detectadas: ['Bodega', 'Column2', 'Codigo producto', 'Nombre', 'STOCK', 'Column6', 'Precio', 'Column8', 'Column9', 'Column10', 'Column11', 'Column12', 'Column13', 'Column14', 'Column15', 'Column16', 'Column17', 'Column18', 'Column19', 'Column20', 'Column21', 'Column22', 'Column23', 'Column24', 'Column25', 'Column26', 'Column27', 'Column28', 'Column29', 'Column30', 'Column31', 'Column32', 'Fuente_Archivo', 'Descripción del producto', 'Stock', 'Categoria', 'Imagen', 'Codigo_Producto_SKU', 'Descripcion_Producto', 'Imagen(url del servidor)']
+2025-11-09 15:18:58,909 - INFO - [EXTRACCION_LOCAL] ok
+2025-11-09 15:18:58,909 - INFO - [EXTRACCION_LOCAL] ok
+2025-11-09 15:18:58,909 - INFO - [TRANSFORMACION] inicio
+2025-11-09 15:18:58,909 - INFO - [TRANSFORMACION] inicio
+2025-11-09 15:18:58,909 - INFO - Columnas normalizadas: [('bodega', 'Bodega'), ('column2', 'Column2'), ('codigoproducto', 'Codigo producto'), ('nombre', 'Nombre'), ('stock', 'STOCK'), ('column6', 'Column6'), ('precio', 'Precio'), ('column8', 'Column8'), ('column9', 'Column9'), ('column10', 'Column10'), ('column11', 'Column11'), ('column12', 'Column12'), ('column13', 'Column13'), ('column14', 'Column14'), ('column15', 'Column15'), ('column16', 'Column16'), ('column17', 'Column17'), ('column18', 'Column18'), ('column19', 'Column19'), ('column20', 'Column20'), ('column21', 'Column21'), ('column22', 'Column22'), ('column23', 'Column23'), ('column24', 'Column24'), ('column25', 'Column25'), ('column26', 'Column26'), ('column27', 'Column27'), ('column28', 'Column28'), ('column29', 'Column29'), ('column30', 'Column30'), ('column31', 'Column31'), ('column32', 'Column32'), ('fuentearchivo', 'Fuente_Archivo'), ('descripciondelproducto', 'Descripción del producto'), ('stock', 'Stock'), ('categoria', 'Categoria'), ('imagen', 'Imagen'), ('codigoproductosku', 'Codigo_Producto_SKU'), ('descripcionproducto', 'Descripcion_Producto'), ('imagenurldelservidor', 'Imagen(url del servidor)')]
+2025-11-09 15:18:58,909 - INFO - Columnas normalizadas: [('bodega', 'Bodega'), ('column2', 'Column2'), ('codigoproducto', 'Codigo producto'), ('nombre', 'Nombre'), ('stock', 'STOCK'), ('column6', 'Column6'), ('precio', 'Precio'), ('column8', 'Column8'), ('column9', 'Column9'), ('column10', 'Column10'), ('column11', 'Column11'), ('column12', 'Column12'), ('column13', 'Column13'), ('column14', 'Column14'), ('column15', 'Column15'), ('column16', 'Column16'), ('column17', 'Column17'), ('column18', 'Column18'), ('column19', 'Column19'), ('column20', 'Column20'), ('column21', 'Column21'), ('column22', 'Column22'), ('column23', 'Column23'), ('column24', 'Column24'), ('column25', 'Column25'), ('column26', 'Column26'), ('column27', 'Column27'), ('column28', 'Column28'), ('column29', 'Column29'), ('column30', 'Column30'), ('column31', 'Column31'), ('column32', 'Column32'), ('fuentearchivo', 'Fuente_Archivo'), ('descripciondelproducto', 'Descripción del producto'), ('stock', 'Stock'), ('categoria', 'Categoria'), ('imagen', 'Imagen'), ('codigoproductosku', 'Codigo_Producto_SKU'), ('descripcionproducto', 'Descripcion_Producto'), ('imagenurldelservidor', 'Imagen(url del servidor)')]
+2025-11-09 15:18:58,996 - INFO - Transformación final: 4312 filas
+2025-11-09 15:18:58,996 - INFO - Transformación final: 4312 filas
+2025-11-09 15:18:58,996 - INFO - [TRANSFORMACION] ok
+2025-11-09 15:18:58,996 - INFO - [TRANSFORMACION] ok
+2025-11-09 15:18:58,996 - INFO - [CARGA] inicio
+2025-11-09 15:18:58,996 - INFO - [CARGA] inicio
+2025-11-09 15:18:59,039 - INFO - Conexión a la base de datos exitosa: dwh_inventario en localhost
+2025-11-09 15:18:59,039 - INFO - Conexión a la base de datos exitosa: dwh_inventario en localhost
+2025-11-09 15:18:59,233 - INFO - Cargados/actualizados: 8624 registros
+2025-11-09 15:18:59,233 - INFO - Cargados/actualizados: 8624 registros
+2025-11-09 15:18:59,233 - INFO - [CARGA] ok
+2025-11-09 15:18:59,233 - INFO - [CARGA] ok
+2025-11-09 15:18:59,234 - INFO - === FIN PIPELINE ETL (OK) ===
+2025-11-09 15:18:59,234 - INFO - === FIN PIPELINE ETL (OK) ===

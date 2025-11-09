@@ -1,6 +1,7 @@
 # 🧩 ETL – Inventario POS
 
 ## 📘 Descripción general
+
 Este pipeline integra y transforma datos de inventario provenientes de múltiples fuentes locales (archivos Excel y CSV), garantizando la **calidad, consistencia y unificación** de la información antes de su carga en la base de datos.
 
 El objetivo principal es disponer de un **proceso automatizado** que permita consolidar los inventarios de los distintos puntos de venta (POS) en una sola fuente confiable.
@@ -10,6 +11,7 @@ El objetivo principal es disponer de un **proceso automatizado** que permita con
 ## 📥 Extracción de datos
 
 ### Fuentes de entrada
+
 Los datos provienen de diferentes archivos almacenados en el directorio `data/raw/`:
 
 - `Inventario POS 1.xlsx`
@@ -38,7 +40,9 @@ df_final = pd.concat(dfs, ignore_index=True)
 ## 🧹 Limpieza y estandarización
 
 ### Reglas aplicadas
+
 1. **Normalización de texto:**
+
    - Conversión a minúsculas.
    - Eliminación de acentos, caracteres especiales y espacios innecesarios.
    - Sustitución de valores nulos por cadenas vacías.
@@ -52,18 +56,18 @@ df_final = pd.concat(dfs, ignore_index=True)
        txt = re.sub(r"\s+", " ", txt).strip().lower()
        return txt
    ```
-
 2. **Homogeneización de nombres de columnas:**
+
    - Todas las columnas se normalizan con nombres en minúsculas y sin espacios.
    - Se renombran campos críticos para mantener coherencia entre las fuentes.
-
 3. **Eliminación de duplicados:**
+
    - Se eliminan registros repetidos según claves como `codigo_producto` o `descripcion`.
-
 4. **Filtrado de registros vacíos:**
-   - Se descartan filas donde faltan datos esenciales como `cantidad` o `precio_unitario`.
 
+   - Se descartan filas donde faltan datos esenciales como `cantidad` o `precio_unitario`.
 5. **Conversión de tipos de datos:**
+
    - Se asegura que los campos numéricos y de fecha tengan el formato correcto (`float`, `datetime`, etc.).
 
 ---
@@ -91,7 +95,7 @@ Estas reglas aseguran que los datos cargados sean **coherentes, comparables y an
 
 ### Método: **Upsert (inserción o actualización masiva)**
 
-La función `bulk_upsert_inventario()` realiza una **carga masiva con detección de duplicados**.  
+La función `bulk_upsert_inventario()` realiza una **carga masiva con detección de duplicados**.
 Esto significa que si un registro ya existe en la base de datos, se actualiza; si no, se inserta.
 
 ```python
@@ -100,6 +104,7 @@ bulk_upsert_inventario(df_final)
 ```
 
 #### Justificación del método:
+
 - **Eficiencia:** se insertan o actualizan miles de registros en bloque, reduciendo tiempos de ejecución.
 - **Consistencia:** evita duplicar inventarios previamente cargados.
 - **Escalabilidad:** permite ejecutar el pipeline de forma periódica sin limpiar la tabla completa.
@@ -134,19 +139,38 @@ ETL_Sistemas_Seguridad/
 
 ---
 
+## 🔐 Variables de entorno (.env)
+
+Las credenciales de la base de datos se gestionan mediante un archivo **`.env`** (no se versiona) para mantener la seguridad.
+
+Para ello se debe crear un archivo .env en la raíz del proyecto con el siguiente contenido y reemplazando los valores por los correspondientes a la conexión real con la base de datos:
+
+```
+DB_HOST=localhost
+DB_NAME=dw_inventory
+DB_USER=etl_user
+DB_PASSWORD=CHANGE_ME
+
+```
+
+
+---
+
+
+
 ## 🚀 Ejecución
 
 1. Activar entorno virtual (si aplica):
+
    ```bash
    .venv\Scripts\activate     # En Windows
    source .venv/bin/activate  # En Linux/Mac
    ```
-
 2. Ejecutar el script principal:
-   ```bash
-   python main.py
-   ```
 
+   ```bash
+   python -m  etl.pipeline
+   ```
 3. Verificar los logs en la carpeta `logs/` para confirmar la correcta ejecución del proceso.
 
 ---
@@ -164,6 +188,7 @@ flowchart TD
 ```
 
 ---
+
 ## ❓ Soporte y guía adicional
 
 En caso de tener dudas sobre cómo ejecutar correctamente el pipeline, refiérase al siguiente documento con las instrucciones detalladas:
@@ -172,9 +197,9 @@ En caso de tener dudas sobre cómo ejecutar correctamente el pipeline, refiéras
 
 Este documento explica paso a paso la configuración del entorno, la conexión a la base de datos y la ejecución completa del proceso ETL.
 
-
 ---
+
 ## 🧾 Autoría
 
-**Proyecto ETL de Inventario POS**  
+**Proyecto ETL de Inventario POS**
 Versión 1.0 — Noviembre 2025
