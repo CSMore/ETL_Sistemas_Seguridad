@@ -24,12 +24,20 @@ def get_connection():
     password = _required("DB_PASSWORD")
 
     # Paramentros de conexión 
+    ssl_ca = _required("DB_SSL_CA")
+    ssl_verify = os.getenv("DB_SSL_VERIFY_CERT", "true").lower() == "true"
+
     kwargs = dict(
         host=host,
         user=user,
         password=password,
         database=database,
-    )    
+        ssl_ca=ssl_ca,
+        ssl_verify_cert=ssl_verify,
+        ssl_cert=_required("DB_SSL_CERT"),
+        ssl_key=_required("DB_SSL_KEY"),
+        ssl_disabled=False,
+    )
 
     return mysql.connect(**kwargs)
 

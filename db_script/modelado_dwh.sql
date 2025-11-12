@@ -50,3 +50,14 @@ CREATE TABLE etl_error (
   creado_en TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (id_run) REFERENCES etl_run(id_run)
 );
+
+
+
+
+
+
+
+
+
+
+
