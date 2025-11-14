@@ -21,35 +21,17 @@ CREATE TABLE inventario_consolidado (
   INDEX ix_nombre (nombre)
 );
 
--- ==============================
--- Esquema: etl_logs
--- ==============================
-
-USE etl_logs;
-
--- Registro de ejecución del ETL
-CREATE TABLE etl_run (
-  id_run BIGINT AUTO_INCREMENT PRIMARY KEY,
-  inicio_ejecucion DATETIME NOT NULL,
-  fin_ejecucion DATETIME NULL,
-  registros_extraidos INT DEFAULT 0,
-  registros_transformados INT DEFAULT 0,
-  registros_cargados INT DEFAULT 0,
-  estado ENUM('OK', 'ERROR', 'PARCIAL') NOT NULL DEFAULT 'OK',
-  mensaje_resumen VARCHAR(500)
+CREATE TABLE IF NOT EXISTS registro_auditoria (
+  id_log BIGINT AUTO_INCREMENT PRIMARY KEY,
+  fecha_hora DATETIME NOT NULL,
+  nivel VARCHAR(50) NOT NULL,
+  mensaje TEXT NOT NULL,
+  proceso VARCHAR(100) DEFAULT 'PIPELINE'
 );
 
--- Registro de errores del ETL
-CREATE TABLE etl_error (
-  id_error BIGINT AUTO_INCREMENT PRIMARY KEY,
-  id_run  BIGINT NOT NULL,
-  etapa ENUM('EXTRACCION', 'TRANSFORMACION', 'CARGA') NOT NULL,
-  fuente_archivo VARCHAR(255),
-  tipo_error VARCHAR(100) NOT NULL,
-  detalle VARCHAR(1000) NOT NULL,
-  creado_en TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (id_run) REFERENCES etl_run(id_run)
-);
+GRANT ALL PRIVILEGES ON dwh_inventario.* TO 'ssl_user'@'localhost' REQUIRE SSL; 
+
+
 
 
 

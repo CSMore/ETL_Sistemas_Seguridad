@@ -24,6 +24,7 @@ def get_connection():
     password = _required("DB_PASSWORD")
 
     # Paramentros de conexión 
+
     ssl_ca = _required("DB_SSL_CA")
     ssl_verify = os.getenv("DB_SSL_VERIFY_CERT", "true").lower() == "true"
 
@@ -61,6 +62,7 @@ def bulk_upsert_inventario(df):
     """
     try:
         #Convierte dataframe a lista de tuplas para insertar
+        df["fecha_carga_dw"] = df["fecha_carga_dw"].dt.strftime("%Y-%m-%d %H:%M:%S")
         cur.executemany(sql, list(df.itertuples(index=False, name=None)))
         conn.commit()
         return cur.rowcount  #Cantidad de filas insertadas/actualizadas
